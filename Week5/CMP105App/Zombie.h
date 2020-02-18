@@ -13,6 +13,7 @@ public:
 
 	// Functions
 	void update(float dt) override;
+	void handleInput(float dt) override;
 
 protected:
 	Animation walk;

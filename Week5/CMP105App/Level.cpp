@@ -9,6 +9,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	//Adding Zombie
 	zombTexture.loadFromFile("gfx/animZombie.png");
+	zombie.setInput(in);
 	zombie.setTexture(&zombTexture);
 	zombie.setSize(sf::Vector2f(55, 108));
 	zombie.setPosition(100, 100);
@@ -24,7 +25,7 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-
+	zombie.handleInput(dt);
 }
 
 // Update game objects

@@ -3,6 +3,8 @@
 // Constructors
 Zombie::Zombie()
 {
+	velocity = sf::Vector2f(80.f, 80.f);
+
 	//Setup walk animation
 	walk.addFrame(sf::IntRect(0, 0, 55, 108));
 	walk.addFrame(sf::IntRect(55, 0, 55, 108));
@@ -27,4 +29,27 @@ void Zombie::update(float dt)
 {
 	walk.animate(dt);
 	setTextureRect(walk.getCurrentFrame());
+}
+
+void Zombie::handleInput(float dt)
+{
+	if (input->isKeyDown(sf::Keyboard::Up))
+	{
+		move(0 * dt, -velocity.y * dt);
+	}
+	if (input->isKeyDown(sf::Keyboard::Down))
+	{
+		move(0 * dt, velocity.y * dt);
+	}
+	if (input->isKeyDown(sf::Keyboard::Left))
+	{
+		if (walk.getFlipped() == false) walk.setFlipped(true); // Flipped to left
+		move(-velocity.x * dt, 0 * dt);		
+	}
+	if (input->isKeyDown(sf::Keyboard::Right))
+	{
+		if (walk.getFlipped() == true) walk.setFlipped(false);  // Not Flipped to left
+		move(velocity.x * dt, 0 * dt);
+	}
+
 }
