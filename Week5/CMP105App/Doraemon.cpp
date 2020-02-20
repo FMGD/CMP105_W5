@@ -1,36 +1,31 @@
-#include "Zombie.h"
+#include "Doraemon.h"
 
 // Constructors
-Zombie::Zombie()
+Doraemon::Doraemon()
 {
 	velocity = sf::Vector2f(80.1f, 80.1f);
 
 	//Setup walk animation
-	walk.addFrame(sf::IntRect(0, 0, 55, 108)); // Each Zombie frame is 55 * 108 px
-	walk.addFrame(sf::IntRect(55, 0, 55, 108)); // IntRect(desplacement-x, desplacement-y, 55, 108)
-	walk.addFrame(sf::IntRect(110, 0, 55, 108));
-	walk.addFrame(sf::IntRect(165, 0, 55, 108));
-	walk.addFrame(sf::IntRect(220, 0, 55, 108));
-	walk.addFrame(sf::IntRect(275, 0, 55, 108));
-	walk.addFrame(sf::IntRect(330, 0, 55, 108));
-	walk.addFrame(sf::IntRect(385, 0, 55, 108));
+	walk.addFrame(sf::IntRect(0, 0, 32, 32)); // Each Doraemon frame is 32 * 96 px
+	walk.addFrame(sf::IntRect(32, 0, 32, 32)); // IntRect(desplacement-x, desplacement-y, 32, 96)
+	walk.addFrame(sf::IntRect(64, 0, 32, 32));
 	walk.setFrameSpeed(1.f / 10.f);
 
 }
 
 // Destructor
-Zombie::~Zombie()
+Doraemon::~Doraemon()
 {
 
 }
 
 // Functions
-void Zombie::update(float dt)
+void Doraemon::update(float dt)
 {
 	setTextureRect(walk.getCurrentFrame());
 }
 
-void Zombie::handleInput(float dt)
+void Doraemon::handleInput(float dt)
 {
 	if (input->isKeyDown(sf::Keyboard::Up))
 	{
@@ -56,3 +51,4 @@ void Zombie::handleInput(float dt)
 	}
 
 }
+

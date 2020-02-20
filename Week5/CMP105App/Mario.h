@@ -1,18 +1,26 @@
 #pragma once
 #include "Framework/GameObject.h"
 #include "Framework/Animation.h"
+#include <vector>
+#include <string>
+#include <iostream>
 
-class Zombie : public GameObject
+class Mario : public GameObject
 {
 protected:
+
+	std::vector<Animation*> animations;
 	Animation walk;
+	Animation swim;
+	Animation duck;
 
 public:
-	// Constructors
-	Zombie();
+
+	// Constructor
+	Mario();
 
 	// Destructor
-	~Zombie();
+	~Mario();
 
 	// Functions
 	void update(float dt) override;
