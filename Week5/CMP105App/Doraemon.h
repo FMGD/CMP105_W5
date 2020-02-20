@@ -2,17 +2,17 @@
 #include "Framework/GameObject.h"
 #include "Framework/Animation.h"
 
-class Zombie : public GameObject
+class Doraemon :	public GameObject
 {
 protected:
 	Animation walk;
 
 public:
 	// Constructors
-	Zombie();
+	Doraemon();
 
 	// Destructor
-	~Zombie();
+	~Doraemon();
 
 	// Functions
 	void update(float dt) override;
